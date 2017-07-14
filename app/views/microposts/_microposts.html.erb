@@ -15,10 +15,15 @@
         <div>
           <% if current_user == micropost.user %>
             <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+            
           <% end %>
+            <%= render 'microposts/like_button', micropost: micropost  %>
         </div>
+
+        
       </div>
     </li>
   <% end %>
   <%= paginate microposts %>
 </ul>
+
